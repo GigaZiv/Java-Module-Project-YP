@@ -1,4 +1,4 @@
-//  Автор: Жуков Игорь, Версия: 1.00
+//  Автор: Жуков Игорь, Версия: 1.01
 import java.util.ArrayList;
 import java.util.Comparator;
 public class Race {
@@ -7,10 +7,10 @@ public class Race {
         return !carName.isEmpty();
     }
     public static Boolean getCheckSpeedCar(int carSpeed){
-        if (carSpeed <= 0 || carSpeed > 250){
-            System.out.printf("Неверно указана скорость автомобиля %s! Допустимые значения больше 0 и не более 250 км/ч!%n", carSpeed);
+        if (carSpeed < 0 || carSpeed > 250){
+            System.out.printf("Неверно указана скорость автомобиля %s! Допустимые значения от 0 и не более 250 км/ч!%n", carSpeed);
         }
-        return (carSpeed > 0 && carSpeed <= 250);
+        return (carSpeed >= 0 && carSpeed <= 250);
     }
 
     public static String getWinnerCar(ArrayList<Car> cars) {
